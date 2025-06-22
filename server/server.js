@@ -18,7 +18,7 @@ await connectDB()
 await connectCloudinary()
 
 //alowed origins for CORS
-const allowedOrigins = ['http://localhost:5173']; 
+const allowedOrigins = ['http://localhost:5173',' https://green-cart-jet.vercel.app']; 
 
 // middleware config
 app.use(express.json());
