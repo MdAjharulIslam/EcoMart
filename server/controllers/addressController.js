@@ -1,6 +1,6 @@
 import Address from "../models/address.js";
 import mongoose from "mongoose";
-
+import jwt from "jsonwebtoken";
 // Add or update user address: POST /api/address/add
 export const addAddress = async (req, res) => {
   try {
@@ -43,10 +43,7 @@ export const addAddress = async (req, res) => {
   }
 };
 
-
-
 //get address : /api/address/get
-import jwt from "jsonwebtoken";
 
 export const getAddress = async (req, res) => {
   try {
@@ -76,4 +73,3 @@ export const getAddress = async (req, res) => {
     });
   }
 };
-
