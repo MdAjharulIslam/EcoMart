@@ -1,15 +1,12 @@
 import Address from "../models/address.js";
 import mongoose from "mongoose";
 
-// Add address to a user: /api/address/add
+// Add or update user address: POST /api/address/add
 export const addAddress = async (req, res) => {
   try {
     const { userId, address } = req.body;
 
-    // Log request body for debugging
-    console.log(req.body);
-
-    // Validate userId as a valid ObjectId
+    // Validate userId
     if (!mongoose.Types.ObjectId.isValid(userId)) {
       return res.status(400).json({
         success: false,
@@ -17,16 +14,19 @@ export const addAddress = async (req, res) => {
       });
     }
 
-    // Check if the user already has an address
+    // Check if user already has an address
     const existingAddress = await Address.findOne({ userId });
+
     if (existingAddress) {
-      return res.status(400).json({
-        success: false,
-        message: "User already has an address.",
+      // Update existing address
+      await Address.findOneAndUpdate({ userId }, address);
+      return res.json({
+        success: true,
+        message: "Address updated successfully",
       });
     }
 
-    // Add the new address
+    // If not found, create a new address
     await Address.create({ userId, ...address });
 
     res.json({
@@ -34,14 +34,15 @@ export const addAddress = async (req, res) => {
       message: "Address added successfully",
     });
   } catch (error) {
-    console.error("Error adding address:", error); // Log the full error
+    console.error("Error adding/updating address:", error);
     res.status(500).json({
       success: false,
-      message: "Error adding address",
-      error: error.message, // Send detailed error message back to the client
+      message: "Error adding/updating address",
+      error: error.message,
     });
   }
 };
+
 
 
 //get address : /api/address/get
