@@ -51,9 +51,9 @@ const AddAddress = () => {
     }
 
     try {
-      // Ensure you pass userId along with address to the backend
+      
       const { data } = await axios.post('/api/address/add', {
-        userId: user._id,  // Add user._id here
+        userId: user._id,  
         address,
       });
 
