@@ -21,7 +21,7 @@ await connectCloudinary();
 const allowedOrigins = [
   'http://localhost:5173',
   'https://green-cart-jet.vercel.app',
-  'https://grocery-app-1-tbtg.onrender.com/'
+  'https://grocery-app-1-tbtg.onrender.com'
 ];
 
 // Middleware config
