@@ -27,7 +27,7 @@ const App = () => {
 
 
   return (
-    <div className='text-default min-h-screen text-gray-700 bg-white'>
+    <div className='text-default min-h-screen text-gray-700 bg-gray-200 '>
       {isSellerPath ? null : <Navbar/>}
       {showUserLogin ? <Login/> : null}
       <Toaster/>
