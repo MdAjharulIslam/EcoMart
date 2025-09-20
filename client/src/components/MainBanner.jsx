@@ -9,8 +9,8 @@ import "swiper/css/pagination"
 
 const MainBanner = () => {
   const slides = [
-    { id: 1, img: assets.main_banner_bg,  imgSm: assets.main_banner_bg_sm },
-    { id: 2, img: assets.main_banner_bg1, imgSm: assets.main_banner_bg_sm },
+    { id: 1, img: assets.main_banner_bg1, imgSm: assets.main_banner_bg_sm },
+    { id: 2, img: assets.main_banner_bg,  imgSm: assets.main_banner_bg_sm },
     { id: 3, img: assets.main_banner_bg2, imgSm: assets.main_banner_bg_sm },
     { id: 4, img: assets.main_banner_bg3, imgSm: assets.main_banner_bg_sm },
   ]
