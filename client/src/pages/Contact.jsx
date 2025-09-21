@@ -106,7 +106,7 @@ export const Contact = () => {
                       Email Address
                     </h4>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      info@greencart.com
+                      info@EcoMart.com
                     </p>
                   </div>
                 </div>
