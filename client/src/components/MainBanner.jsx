@@ -22,7 +22,7 @@ const MainBanner = () => {
         modules={[Navigation, Pagination, Autoplay]}
         
         loop
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 2000 }}
         pagination={{ clickable: true }}
         navigation
         className="w-full h-full "
