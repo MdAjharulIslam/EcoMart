@@ -36,13 +36,15 @@ const MainBanner = () => {
       </Swiper>
 
       {/* 🔹 Overlay (always on top) */}
-      <div className='absolute inset-0 z-20 flex flex-col items-center md:items-start justify-end md:justify-center pb-24 md:pb-0 px-4 md:pl-18 lg:pl-24'>
+      <div className='absolute inset-0 z-20 flex flex-col items-center md:items-start justify-end md:justify-center
+       pb-24 md:pb-0 px-4 md:pl-18 lg:pl-24'>
         <h1 className='text-3xl text-white md:text-4xl lg:text-5xl font-bold text-center md:text-left max-w-72 md:max-w-80 lg:max-w-105 leading-tight lg:leading-15'>
         <span className='text-green-500'>Quality in every bite,</span>   savings in every cart
         </h1>
 
         <div className='flex items-center mt-6 font-medium'>
-          <Link to={"/products"} className='group flex items-center gap-2 px-7 md:px-9 py-3 bg-primary hover:bg-primary-dull transition rounded text-white cursor-pointer'>
+          <Link to={"/products"} className='group flex items-center gap-2 px-7 md:px-9 py-3
+           bg-primary hover:bg-primary-dull transition rounded text-white cursor-pointer hover:shadow-2xl shadow-green-400'>
             Shop Now
             <img className='md:hidden transition group-focus:translate-x-1' src={assets.white_arrow_icon} alt="arrow" />
           </Link>

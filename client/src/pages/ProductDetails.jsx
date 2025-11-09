@@ -31,9 +31,9 @@ const ProductDetails = () => {
 
     return product && (
         <div className="mt-12">
-            <p>
-                <Link to={"/"}>Home</Link> /
-                <Link to={"/products"}> Products</Link> /
+            <p >
+                <Link to={"/"} >Home</Link> /
+                <Link to={"/products"} > Products</Link> /
                 <Link to={`/products/${product.category.toLowerCase()}`}> {product.category}</Link> /
                 <span className="text-primary"> {product.name}</span>
             </p>
@@ -42,13 +42,13 @@ const ProductDetails = () => {
                 <div className="flex gap-3">
                     <div className="flex flex-col gap-3">
                         {product.image.map((image, index) => (
-                            <div key={index} onClick={() => setThumbnail(image)} className="border max-w-24 border-gray-500/30 rounded overflow-hidden cursor-pointer" >
+                            <div key={index} onClick={() => setThumbnail(image)} className="border max-w-24 shadow-2xl shadow-green-300 border-gray-500/30 rounded overflow-hidden cursor-pointer" >
                                 <img src={image} alt={`Thumbnail ${index + 1}`} />
                             </div>
                         ))}
                     </div>
 
-                    <div className="border border-gray-500/30 max-w-100 rounded overflow-hidden">
+                    <div className="border border-gray-500/30 max-w-100 rounded overflow-hidden shadow-2xl shadow-green-800">
                         <img src={thumbnail} alt="Selected product" />
                     </div>
                 </div>
@@ -79,10 +79,10 @@ const ProductDetails = () => {
                     </ul>
 
                     <div className="flex items-center mt-10 gap-4 text-base">
-                        <button onClick={()=> addToCart(product._id)} className="w-full py-3.5 cursor-pointer font-medium bg-gray-100 text-gray-800/80 hover:bg-gray-200 transition" >
+                        <button onClick={()=> addToCart(product._id)} className=" shadow-2xl shadow-green-800 w-full py-3.5 cursor-pointer font-medium bg-gray-100 text-gray-800/80 hover:bg-gray-200 transition" >
                             Add to Cart
                         </button>
-                        <button onClick={() => { addToCart(product._id); navigate("/cart");}} className="w-full py-3.5 cursor-pointer font-medium bg-primary text-white hover:bg-primary-dull transition" >
+                        <button onClick={() => { addToCart(product._id); navigate("/cart");}} className="shadow-2xl shadow-green-800 w-full py-3.5 cursor-pointer font-medium bg-primary text-white hover:bg-primary-dull transition" >
                             Buy now
                         </button>
                     </div>
@@ -99,7 +99,9 @@ const ProductDetails = () => {
                             <ProductCard key={index} product={product} />
                         ))}
                         </div>   
-                        <button onClick={()=>{navigate('/products'); scrollTo(0,0)}} className="mx-auto cursor-pointer px-12 my-16 py-2.5 border rounded text-primary hover:bg-primary/10 transition"
+                        <button onClick={()=>{navigate('/products'); scrollTo(0,0)}} className="mx-auto cursor-pointer px-12 my-16
+                         py-2.5 border rounded text-primary hover:bg-primary/10 transition
+                        hover:shadow-2xl shadow-green-600"
                         >See More</button>
             </div>
         </div>

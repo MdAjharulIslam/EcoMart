@@ -9,9 +9,9 @@ import Footer from '../components/Footer'
 
 const Home = () => {
   return (
-    <div className='mt-10'>
+    <div className='mt-10 '>
         
-      <MainBanner/>
+      <MainBanner />
       <Categories/>
       <BestSeller/>
       <BottomBanner/>

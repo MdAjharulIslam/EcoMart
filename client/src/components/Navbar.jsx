@@ -31,10 +31,12 @@ const Navbar = () => {
     },[searchQuery])
 
   return (
-    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
+    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all
+    
+    shadow-2xl shadow-green-300 ">
 
             <NavLink to='/' onClick={()=>setOpen(false)}>
-                <img className="h-18" src={assets.logo} alt="dummyLogoColored" />
+                <img className="h-18  transition-all hover:scale-105" src={assets.logo} alt="dummyLogoColored" />
             </NavLink>
 
             {/* Desktop Menu */}
