@@ -5,7 +5,7 @@ import { useAppContext } from "../context/AppContext";
 const ProductCard = ({ product }) => {
   const { currency, addToCart, removeFromCart, cartItems, navigate } = useAppContext();
   
-  // State for heart toggle
+ 
   const [liked, setLiked] = useState(false);
 
   return product && (
