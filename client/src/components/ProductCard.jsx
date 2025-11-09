@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
     setLiked(!liked);    
   }}
   className={`absolute top-2 right-2 transition-all duration-300 hover:cursor-pointer ${
-    liked ? "text-red-600" : "text-gray-400"
+    liked ? "text-green-600" : "text-gray-400"
   }`}
 >
   <svg
