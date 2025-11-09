@@ -18,59 +18,80 @@ const ProductCard = ({ product }) => {
         }}
         className="relative border border-gray-500/20 rounded-md md:px-4 px-3 py-2 bg-gray-300 min-w-56 max-w-56 w-full hover:scale-105 transition-all shadow-green-800 shadow-2xl"
       >
-        {/* Heart Icon */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            setLiked(!liked);
-          }}
-          className={`absolute top-2 right-2 transition-all duration-300 hover:cursor-pointer ${
-            liked ? "text-green-600" : "text-gray-400"
-          }`}
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill={liked ? "currentColor" : "none"}
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+        {/* Top Right Icons Group */}
+        <div className="absolute top-2 right-2 flex gap-2 z-10">
+          {/* Eye Icon for Quick Preview */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setPreviewOpen(true);
+            }}
+            className="text-gray-400 hover:text-green-600 transition-colors duration-300 bg-white/80 backdrop-blur-sm rounded-full p-1.5 shadow-md"
           >
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-          </svg>
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              />
+            </svg>
+          </button>
 
-        {/* Eye Icon for Quick Preview */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            setPreviewOpen(true);
-          }}
-          className="absolute top-2 left-2 text-gray-400 hover:text-green-600 transition-colors duration-300 text-2xl"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-6 h-6"
+          {/* Heart Icon */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setLiked(!liked);
+            }}
+            className={`transition-all duration-300 hover:cursor-pointer bg-white/80 backdrop-blur-sm rounded-full p-1.5 shadow-md ${
+              liked ? "text-green-600" : "text-gray-400"
+            }`}
           >
-            <path
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill={liked ? "currentColor" : "none"}
+              stroke="currentColor"
+              strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-            />
-          </svg>
-        </button>
+            >
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Dynamic Badge */}
+        {product.badge && (
+          <span
+            className={`absolute top-2 left-2 md:left-4 px-2 py-1 rounded-md text-[10px] md:text-xs font-semibold tracking-wide shadow-md z-10
+              ${
+                product.badge === "20% OFF"
+                  ? "bg-red-500 text-white"
+                  : product.badge === "New Arrival"
+                  ? "bg-green-500 text-white"
+                  : product.badge === "Limited Stock"
+                  ? "bg-yellow-400 text-black"
+                  : "bg-blue-500 text-white"
+              }`}
+          >
+            {product.badge}
+          </span>
+        )}
 
         {/* Product Image */}
         <div className="group cursor-pointer flex items-center justify-center px-2">

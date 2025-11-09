@@ -10,6 +10,7 @@ const AddProduct = () => {
   const [category, setCategory] = useState('');
   const [price, setPrice] = useState('');
   const [offerPrice, setOfferPrice] = useState('');
+  const [badge, setBadge] = useState('');
 
   const { axios } = useAppContext();
 
@@ -22,6 +23,7 @@ const AddProduct = () => {
         category,
         price,
         offerPrice,
+        badge
         
       };
 
@@ -41,6 +43,7 @@ const AddProduct = () => {
         setPrice('');
         setOfferPrice('');
         setFiles([]);
+        setBadge('')
       } else {
         toast.error(data.message);
       }
@@ -111,6 +114,21 @@ const AddProduct = () => {
                      id="offer-price" type="number" placeholder="0" className="outline-none md:py-2.5 py-2 px-3 rounded border border-gray-500/40" required />
                 </div>
             </div>
+            <div className="w-full flex flex-col gap-1 max-w-md">
+  <label className="text-base font-medium" htmlFor="badge">Badge</label>
+  <select
+    onChange={(e) => setBadge(e.target.value)}
+    value={badge}
+    id="badge"
+    className="outline-none md:py-2.5 py-2 px-3 rounded border border-gray-500/40"
+  >
+    <option value="">None</option>
+    <option value="20% OFF">20% OFF</option>
+    <option value="New Arrival">New Arrival</option>
+    <option value="Limited Stock">Limited Stock</option>
+  </select>
+</div>
+
             <button className="px-8 py-2.5 bg-primary text-white font-medium rounded cursor-pointer">ADD</button>
         </form>
     </div>

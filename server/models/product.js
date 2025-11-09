@@ -34,6 +34,11 @@ const productSchema = new mongoose.Schema({
         type: Boolean,
         default: true,
     },
+     badge: {
+        type: String,
+        enum: ["20% OFF", "New Arrival", "Limited Stock"],
+        default: null, 
+    },
     
 },{timestamps:true} )
 
