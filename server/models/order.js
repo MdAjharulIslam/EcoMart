@@ -11,7 +11,7 @@ const orderSchema = new mongoose.Schema({
     {
       product: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'product', // 👈 Make sure this matches your Product model name
+        ref: 'product', 
       },
       quantity: {
         type: Number,
@@ -43,6 +43,12 @@ isPaid: {
     required: true,
 
   },
+  status: {
+      type: String,
+      enum: ["Pending", "Approved", "Shipped", "Delivered", "Cancelled"],
+      default: "Pending",
+    },
+
 
 },{timestamps: true});
 
