@@ -54,7 +54,7 @@ const MyOrders = () => {
               <div className="flex flex-col md:flex-row gap-4 md:gap-8">
                 <span className="font-medium">Order ID: <span className="text-gray-800">{order._id}</span></span>
                 <span>Payment: <span className="text-gray-800">{order.paymentType}</span></span>
-                <span>Total Amount: <span className="text-gray-800">{currency} {order.amount}</span></span>
+                <span className='text-green-600 text-lg'>Total Amount: <span className="text-gray-800">{currency} {order.amount}</span></span>
               </div>
 
               {/* Status Badge on Right */}

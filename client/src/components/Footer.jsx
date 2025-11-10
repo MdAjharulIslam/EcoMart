@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="px-6 md:px-16 lg:px-24 xl:px-32 mt-24 bg-primary/10 shadow-[0_-10px_60px_rgba(22,300,74,0.30)]">
       <div className="flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-gray-500/30 text-gray-500">
         <div>
-          <img className="w-54 h-18 md:w-32" src={assets.logo} alt="logo" />
+          <img className="w-60 h-24 md:w-32 hover:scale-110 transition-all" src={assets.logo1} alt="logo" />
           <p className="max-w-[410px] mt-6">
             Thank you for visiting our website. Stay connected with us for more
             updates, news, and support. We are committed to bringing you the

@@ -5,7 +5,7 @@ export const updateCart = async (req, res) => {
   try {
     const { userId, cartItems } = req.body;
 
-    // Check if the userId and cartItems exist
+    
     if (!userId || !cartItems) {
       return res.json({
         success: false,
@@ -13,11 +13,11 @@ export const updateCart = async (req, res) => {
       });
     }
 
-    // Update the user's cartItems in the database
+    
     const updatedUser = await user.findByIdAndUpdate(
       userId,
       { cartItems },
-      { new: true } // This ensures that the updated user document is returned
+      { new: true }
     );
 
     if (!updatedUser) {
@@ -27,11 +27,11 @@ export const updateCart = async (req, res) => {
       });
     }
 
-    // Return the updated user info (optional, but can be useful for frontend)
+    
     res.json({
       success: true,
       message: "Cart updated successfully",
-      user: updatedUser, // You can return the updated user, including the updated cartItems
+      user: updatedUser, 
     });
   } catch (error) {
     console.log(error);
