@@ -7,6 +7,10 @@ A full-featured grocery shopping web application built with the MERN stack (Mong
 ## 🚀 Live Demo
 
 [![Live Demo (https://grocery-app-self.vercel.app)]
+## ✨ Admin access
+# url :https://grocery-app-self.vercel.app/seller
+# admin Email :admin@example.com
+ # admin pass : 123456789
 
 ## ✨ Features
 
