@@ -118,7 +118,7 @@ const ProductCard = ({ product }) => {
                   alt=""
                 />
               ))}
-            <p>(4)</p>
+            <p>(4.5)</p>
           </div>
 
           <div className="flex items-end justify-between mt-3">
