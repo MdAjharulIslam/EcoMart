@@ -7,21 +7,21 @@ const BottomBanner = () => {
       <img
         src={assets.bottom_banner_image}
         alt="banner"
-        className="w-full hidden md:block"
+        className="w-full hidden md:block  "
       />
       <img
         src={assets.bottom_banner_image_sm}
         alt="banner"
-        className="w-full  md:hidden"
+        className="w-full  md:hidden  "
       />
 
       <div className="absolute inset-0 flex flex-col items-center md:items-end md:justify-center pt-16 md:pt-0 md:pr-24">
         <div>
-          <h1 className="text-2xl md:text-3xl font-semibold text-primary mb-6">
+          <h1 className="text-2xl md:text-3xl font-semibold text-primary mb-6 hover:scale-110 transition">
             Why We are The Best?
           </h1>
           {features.map((feature, index) => (
-            <div key={index} className="flex items-center gap-4 mt-2">
+            <div key={index} className="flex items-center gap-4 mt-2 hover:scale-110 transition">
               <img
                 src={feature.icon}
                 alt={feature.title}
