@@ -10,17 +10,17 @@ const ProductCard = ({ product }) => {
 
   return product && (
     <>
-      {/* Product Card */}
+      
       <div
         onClick={() => {
           navigate(`/products/${product.category.toLowerCase().trim()}/${product._id}`);
           window.scrollTo(0, 0);
         }}
-        className="relative border border-gray-500/20 rounded-md md:px-4 px-3 py-2 bg-gray-300 min-w-56 max-w-56 w-full hover:scale-105 transition-all shadow-green-800 shadow-2xl"
+        className="relative border border-gray-500/20 rounded-md md:px-4 px-3 py-2 bg-gray-300 min-w-56 max-w-56 w-full hover:scale-105 transition-all  shadow-2xl"
       >
-        {/* Top Right Icons Group */}
+       
         <div className="absolute top-2 right-2 flex gap-2 z-10">
-          {/* Eye Icon for Quick Preview */}
+          
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -50,7 +50,7 @@ const ProductCard = ({ product }) => {
             </svg>
           </button>
 
-          {/* Heart Icon */}
+         
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -75,7 +75,7 @@ const ProductCard = ({ product }) => {
           </button>
         </div>
 
-        {/* Dynamic Badge */}
+        
         {product.badge && (
           <span
             className={`absolute top-2 left-2 md:left-4 px-2 py-1 rounded-md text-[10px] md:text-xs font-semibold tracking-wide shadow-md z-10
@@ -93,7 +93,7 @@ const ProductCard = ({ product }) => {
           </span>
         )}
 
-        {/* Product Image */}
+        
         <div className="group cursor-pointer flex items-center justify-center px-2">
           <img
             className="group-hover:scale-105 transition h-26 object-cover max-w-26 md:max-w-36"
@@ -102,7 +102,7 @@ const ProductCard = ({ product }) => {
           />
         </div>
 
-        {/* Product Info */}
+        
         <div className="text-gray-500/60 text-sm">
           <p>{product.category}</p>
           <p className="text-gray-700 font-medium text-lg truncate w-full">{product.name}</p>
@@ -160,7 +160,7 @@ const ProductCard = ({ product }) => {
         </div>
       </div>
 
-      {/* Quick Preview Modal */}
+     
       {previewOpen && (
         <div
           className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"

@@ -5,42 +5,62 @@ import { useAppContext } from '../context/AppContext';
 const BestSeller = () => {
   const { products } = useAppContext();
 
-  
   const inStockProducts = products.filter((product) => product.inStock);
 
-  
   const getBestSellers = () => {
     const total = inStockProducts.length;
     if (total === 0) return [];
 
     const selected = [];
 
-    // 1️⃣ Pick one from the start
-    if (total > 0) selected.push(inStockProducts[0]);
+    
+    const positions = [
+      0,      
+      Math.floor(total * 0.1),
+      Math.floor(total * 0.2),
+      Math.floor(total * 0.3),
+      Math.floor(total * 0.4),
+      Math.floor(total * 0.5), 
+      Math.floor(total * 0.6),
+      Math.floor(total * 0.7),
+      Math.floor(total * 0.8),
+      total - 1  
+    ];
 
-    // 2️⃣ Pick one from near the start (e.g. 2nd or 3rd)
-    if (total > 2) selected.push(inStockProducts[Math.floor(total * 0.2)]);
+    const uniquePositions = [...new Set(positions.filter(pos => pos < total && pos >= 0))];
+    
+    
+    uniquePositions.slice(0, 10).forEach(pos => {
+      selected.push(inStockProducts[pos]);
+    });
 
-    // 3️⃣ Pick one from the middle
-    if (total > 4) selected.push(inStockProducts[Math.floor(total * 0.5)]);
+    
+    for (let i = selected.length; i < 10 && i < total; i++) {
+      const remainingIndex = i % total;
+      if (!selected.some(p => p === inStockProducts[remainingIndex])) {
+        selected.push(inStockProducts[remainingIndex]);
+      }
+    }
 
-    // 4️⃣ Pick one from near the end
-    if (total > 6) selected.push(inStockProducts[Math.floor(total * 0.8)]);
-
-    // 5️⃣ Pick the last one
-    if (total > 1) selected.push(inStockProducts[total - 1]);
-
-    return selected;
+    return selected.slice(0, 10);
   };
 
   const bestSellers = getBestSellers();
 
   return (
     <div className="mt-16">
-      <p className="text-2xl md:text-3xl font-medium">Best Seller</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 lg:grid-cols-5 mt-6">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-bold text-gray-900 mb-4 tracking-tight">
+          Best Sellers
+        </h2>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Our most popular products loved by thousands
+        </p>
+        <div className="w-20 h-1 mx-auto mt-8 bg-gray-900 rounded-full shadow-sm" />
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-5 gap-3 md:gap-6 lg:gap-6 mt-6 ml-8">
         {bestSellers.map((product, index) => (
-          <ProductCard key={index} product={product} />
+          <ProductCard key={product.id || index} product={product} />
         ))}
       </div>
     </div>
