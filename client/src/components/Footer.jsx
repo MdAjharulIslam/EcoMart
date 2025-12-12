@@ -9,11 +9,11 @@ const Footer = () => {
       transition={{ duration: 0.8 }}
       className="px-6 md:px-16 lg:px-24 xl:px-32 mt-24 pt-16 pb-12 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-gray-300 relative overflow-hidden border-t border-gray-700/50"
     >
-      {/* Subtle background pattern */}
+      
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-800/30 to-transparent opacity-50" />
       
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Main content */}
+       
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -17,7 +17,7 @@ const MainBanner = () => {
 
   return (
     <div className='relative w-full'>
-      {/* 🔹 Background Slider */}
+   
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         
@@ -35,7 +35,7 @@ const MainBanner = () => {
         ))}
       </Swiper>
 
-      {/* 🔹 Overlay (always on top) */}
+      
       <div className='absolute inset-0 z-20 flex flex-col items-center md:items-start justify-end md:justify-center
        pb-24 md:pb-0 px-4 md:pl-18 lg:pl-24'>
         <h1 className='text-3xl text-white md:text-4xl lg:text-5xl font-bold text-center md:text-left max-w-72 md:max-w-80 lg:max-w-105 leading-tight lg:leading-15'>
