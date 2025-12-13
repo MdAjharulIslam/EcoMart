@@ -24,25 +24,27 @@ const BestSeller = () => {
       Math.floor(total * 0.6),
       Math.floor(total * 0.7),
       Math.floor(total * 0.8),
+      Math.floor(total * 0.3),
+      Math.floor(total * 0.85),
       total - 1  
     ];
 
     const uniquePositions = [...new Set(positions.filter(pos => pos < total && pos >= 0))];
     
     
-    uniquePositions.slice(0, 10).forEach(pos => {
+    uniquePositions.slice(0, 12).forEach(pos => {
       selected.push(inStockProducts[pos]);
     });
 
     
-    for (let i = selected.length; i < 10 && i < total; i++) {
+    for (let i = selected.length; i < 12 && i < total; i++) {
       const remainingIndex = i % total;
       if (!selected.some(p => p === inStockProducts[remainingIndex])) {
         selected.push(inStockProducts[remainingIndex]);
       }
     }
 
-    return selected.slice(0, 10);
+    return selected.slice(0, 12);
   };
 
   const bestSellers = getBestSellers();
@@ -58,7 +60,7 @@ const BestSeller = () => {
         </p>
         <div className="w-20 h-1 mx-auto mt-8 bg-gray-900 rounded-full shadow-sm" />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-5 gap-3 md:gap-6 lg:gap-6 mt-6 ml-8">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3 md:gap-6 lg:gap-6 mt-6 ml-8">
         {bestSellers.map((product, index) => (
           <ProductCard key={product.id || index} product={product} />
         ))}

@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
           navigate(`/products/${product.category.toLowerCase().trim()}/${product._id}`);
           window.scrollTo(0, 0);
         }}
-        className="relative border border-gray-500/20 rounded-md md:px-4 px-3 py-2 bg-gray-300 min-w-56 max-w-56 w-full hover:scale-105 transition-all  shadow-2xl"
+        className="relative border border-gray-500/20 rounded-md md:px-4 px-3 py-2 bg-gray-300  w-full hover:scale-105 transition-all  shadow-2xl"
       >
        
         <div className="absolute top-2 right-2 flex gap-2 z-10">
