@@ -26,7 +26,7 @@ import main_banner_bg from "./main_banner_bg.png";
 import main_banner_bg1 from "./main_banner_bg1.png";
 import main_banner_bg2 from "./main_banner_bg2.png";
 import main_banner_bg3 from "./main_banner_bg3.png";
-
+import main_banner_bg4 from "./main_banner_bg4.png";
 import main_banner_bg_sm from "./main_banner_bg_sm.png";
 import main_banner_bg_sm2 from "./main_banner_bg_sm2.png";
 import main_banner_bg_sm3 from "./main_banner_bg_sm3.png";
@@ -108,7 +108,7 @@ export const assets = {
   main_banner_bg1,
   main_banner_bg2,
   main_banner_bg3,
-  
+  main_banner_bg4,
   main_banner_bg_sm,
   main_banner_bg_sm2,
   main_banner_bg_sm3,
