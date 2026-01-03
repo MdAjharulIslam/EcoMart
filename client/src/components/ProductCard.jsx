@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
           navigate(`/products/${product.category.toLowerCase().trim()}/${product._id}`);
           window.scrollTo(0, 0);
         }}
-        className="relative border border-gray-500/20 rounded-md md:px-4 px-3 py-2 bg-gray-300  w-full hover:scale-105 transition-all  shadow-2xl"
+        className="relative border border-gray-500/20 rounded-2xl md:px-4 px-3 py-2 bg-gray-300  w-full  hover:scale-105 transition-all  "
       >
        
         <div className="absolute top-2 right-2 flex gap-2 z-10">
@@ -121,7 +121,7 @@ const ProductCard = ({ product }) => {
             <p>(4.5)</p>
           </div>
 
-          <div className="flex items-end justify-between mt-3">
+          <div className="flex items-end justify-between mt-3 pt-6 pb-3">
             <p className="md:text-xl text-base font-medium text-primary">
               {currency} {product.offerPrice}{" "}
               <span className="text-gray-500/60 md:text-sm text-xs line-through">
@@ -129,7 +129,7 @@ const ProductCard = ({ product }) => {
               </span>
             </p>
 
-            <div onClick={(e) => e.stopPropagation()} className="text-primary">
+            <div onClick={(e) => e.stopPropagation()} className="text-primary ">
               {!cartItems[product._id] ? (
                 <button
                   className="flex items-center justify-center gap-1 bg-primary/10 border border-primary/40 md:w-[80px] w-[64px] h-[34px] rounded text-primary cursor-pointer"
