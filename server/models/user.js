@@ -20,7 +20,12 @@ const userSchema = new mongoose.Schema({
     type: Object,
     default: {},
   },
-
+  isVerified: {
+  type: Boolean,
+  default: false,
+},
+otp: String,
+otpExpiry: Date,
 },{minimize: false} )
 
 
