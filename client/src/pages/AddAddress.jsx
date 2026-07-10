@@ -50,6 +50,8 @@ const AddAddress = () => {
       }
     }
 
+    
+
     try {
       
       const { data } = await axios.post('/api/address/add', {
@@ -59,6 +61,7 @@ const AddAddress = () => {
 
       if (data.success) {
         toast.success(data.message);
+        
         navigate('/cart');
       } else {
         toast.error(data.message);
@@ -70,7 +73,7 @@ const AddAddress = () => {
 
   useEffect(() => {
     if (!user) {
-      navigate('/cart');  // Redirect to cart if user is not logged in
+      navigate('/cart');  
     }
   }, [user, navigate]);
 

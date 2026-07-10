@@ -16,16 +16,18 @@ const Cart = () => {
     updateCartItem,
     navigate,
     getCartAmount,
+    setShowUserlogin
+    
   } = useAppContext();
 
   const [cartArray, setCartArray] = useState([]);
   const [address, setAddress] = useState([]);
   const [showAddress, setShowAddress] = useState(false);
   const [selectedAddress, setSelectedAddress] = useState(null);
-  const [paymentOption, setPaymentOption] = useState("COD"); // fixed spelling: paymentOpton -> paymentOption
+  const [paymentOption, setPaymentOption] = useState("COD"); 
 
   const getCart = () => {
-    let tempArray = []; // fixed spelling: tempAray -> tempArray
+    let tempArray = [];
     for (const key in cartItems) {
       const product = products.find((item) => item._id === key);
       product.quantity = cartItems[key];
@@ -35,10 +37,12 @@ const Cart = () => {
   };
 
   const getUserAddress = async () => {
-    if (!user) return; // <- Add this line!
+   
 
     try {
+      
       const { data } = await axios.get("/api/address/get");
+      
       if (data.success) {
         setAddress(data.addresses);
         if (data.addresses.length > 0) {
@@ -54,6 +58,14 @@ const Cart = () => {
 
   const placeOrder = async () => {
     try {
+
+         if (!user) {
+          toast.error("Login first to place an order");
+      setShowUserlogin(true);
+      return;
+    }
+
+       
       if (!selectedAddress) {
         return toast.error("please select an address");
       }
@@ -223,7 +235,7 @@ const Cart = () => {
                   </p>
                 ))}
                 <p
-                  onClick={() => navigate("/add-address")}
+                  onClick={() => navigate("/add-address"), toast.error("login first to add an address")}
                   className="text-primary text-center cursor-pointer p-2 hover:bg-primary/10"
                 >
                   Add address
