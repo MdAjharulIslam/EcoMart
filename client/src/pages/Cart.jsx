@@ -103,6 +103,16 @@ const Cart = () => {
     }
   }, [user]);
 
+
+   const  handleLogin=()=>{
+   if(user){
+    
+    navigate("/add-address")
+    }else{
+        toast.error("login first to add an address")
+    }
+   }
+
   return products.length > 0 && cartItems ? (
     <div className="flex flex-col md:flex-row mt-16 ">
       <div className="flex-1 max-w-4xl">
@@ -235,7 +245,7 @@ const Cart = () => {
                   </p>
                 ))}
                 <p
-                  onClick={() => navigate("/add-address"), toast.error("login first to add an address")}
+                  onClick={() =>handleLogin() }
                   className="text-primary text-center cursor-pointer p-2 hover:bg-primary/10"
                 >
                   Add address
