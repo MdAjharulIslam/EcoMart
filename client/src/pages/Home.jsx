@@ -7,6 +7,7 @@ import BottomBanner from '../components/BottomBanner'
 import NewsLetter from '../components/NewsLetter'
 import Footer from '../components/Footer'
 import Testimonial from '../components/Testimunal'
+import NewProducts from '../components/NewProducts'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <MainBanner />
       <Categories/>
       <BestSeller/>
+      <NewProducts/>
       <BottomBanner/>
       <Testimonial />
       <NewsLetter/>
