@@ -13,7 +13,7 @@ const authUser = (req, res, next) => {
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         if (decoded.id) {
-            req.userId = decoded.id;  // Set userId in the request object
+            req.userId = decoded.id;  
         } else {
             return res.json({
                 success: false,
@@ -21,7 +21,7 @@ const authUser = (req, res, next) => {
             });
         }
 
-        next();  // Pass control to the next middleware/route handler
+        next();  
     } catch (error) {
         console.error(error.message);
         return res.json({
