@@ -26,7 +26,7 @@ A full-featured grocery shopping web application built with the MERN stack (Mong
 - Dashboard with analytics
 - Add/Edit/Delete products
 - Manage product categories
-- View and manage orders
+- View and manage orders 
 
 ## 🛠️ Tech Stack
 
