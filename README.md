@@ -11,7 +11,7 @@ A full-featured grocery shopping web application built with the MERN stack (Mong
 ## url :https://grocery-app-self.vercel.app/seller
 ## admin Email :admin@example.com
 ## admin pass : 123456789
-
+<!-- Formatting check -->
 ## ✨ Features
 
 ### 🛍️ User Features
