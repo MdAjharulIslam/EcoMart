@@ -14,6 +14,8 @@ import orderRouter from './routes/orderRoute.js';
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+
+// Connect MongoDB Database
 await connectDB();
 await connectCloudinary();
 
