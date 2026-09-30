@@ -26,6 +26,7 @@ const BestSeller = () => {
       Math.floor(total * 0.8),
       Math.floor(total * 0.3),
       Math.floor(total * 0.85),
+       Math.floor(total * 0.90),
       total - 1  
     ];
 
